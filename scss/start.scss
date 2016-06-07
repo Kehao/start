@@ -1,0 +1,199 @@
+@import './reset';
+@import '../../core/scss/animate.scss';
+@import "bourbon";
+// @include font-face('HelveticaNeue','/in_promo/2nd-anniversary/webFonts/H/HelveticaNeue',$file-formats: svg woff);
+
+$bg-color: #000;
+$padding-top: 100px;
+@function pn($px, $n: 1.8) {
+    @return ( $px/$n );
+}
+html {
+    background: url(/in_promo/2nd-anniversary/images/star-bg.jpg) repeat;
+    background-size: 50% 50%;
+}
+body{
+    margin: 0 auto;
+    min-height: pn(4800px);
+    width: 100%;
+    text-align: center;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+
+    text-align: center;
+    .text {
+        text-align: center;
+        display: none;
+        position: absolute;
+        img {
+            @include size(1250px/2.3 195px/2.3);
+        }
+        margin-left: -  1250px/4.6;
+        color: #fff;
+        left: 50%;
+        top: 720px;
+        @include animation(fadeIn2 6s 1 ease);
+        overflow: hidden;
+        // font-family: 'HelveticaNeue';
+    }
+    .quan {
+        position: absolute;     
+        @include size(pn(1967px) pn(1939px));
+        margin-left: -  pn(1967px)/2;
+        left: 50%;
+        top: 50px;
+    }
+    .q {
+        display: none;
+        position: absolute;     
+    }
+
+    .q1 {
+        @include size(pn(1950px) pn(1950px));
+        margin-left: -  pn(1950px)/2;
+        left: 50%;
+        top: -50px;
+        img {
+            @include size(pn(1950px) pn(1950px));
+        }
+        @include animation(rotating 8s infinite linear);
+    }
+    .q2 {
+        @include size(pn(1356px) pn(1356px));
+        top: 100px;
+        margin-left: -  pn(1356px)/2;
+        left: 50%;
+        img {
+            @include size(pn(1356px) pn(1356px));
+        }
+        @include animation(rotating 10s infinite linear);
+
+    }
+    .q3 {
+        @include size(pn(908px) pn(908px));
+        top: 220px;
+        margin-left: -  pn(908px)/2;
+        left: 50%;
+        img {
+            @include size(pn(908px) pn(908px));
+        }
+        @include animation(rotating 12s infinite linear);
+    }
+
+@include keyframes(rotating) {
+    from {
+        opacity: 1;
+        @include transform(rotate(0deg));
+    }
+
+    to {
+        opacity: 1;
+        @include transform(rotate(360deg));
+    }
+}
+}
+.stars {
+    position: absolute;
+    @include size(3144px/2 1609px/2);
+    top: 20%;
+    left: 50%;
+    margin-left: - 1600px/2;
+    img {
+        position: absolute;
+        @include animation(star 5s infinite ease);
+    }
+    .star1 {
+        top: 0;
+        left: pn(2208px);
+        @include size(pn(217px) pn(214px));
+    }
+    .star2 {
+        left: 0;
+        top: pn(500px);
+        @include size(pn(205px) pn(201px));
+    }
+    .star3 {
+        right: 0;
+        top: pn(1256px);
+        @include size(pn(93px) pn(92px));
+    }
+    .star4 {
+        left: pn(1050px);
+        bottom: 0;
+        @include size(pn(117px) pn(120px));
+    }
+}
+.wrapper {
+    canvas {
+        position: absolute;
+        left: 50%;     
+        margin-left: -900px;
+    }
+    background: url(/in_promo/2nd-anniversary/images/star-bg.jpg) no-repeat;
+    background-size: contain;
+    height: 2400px;
+    top:0;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    top: -140px;
+}
+
+@include keyframes(star) {
+    0%{
+        opacity: 1;
+        @include transform(scale(2));
+    }
+
+    50%{
+        opacity: 0.6;
+        @include transform(scale(1.2));
+    }
+
+    100%{
+        opacity: 1;
+        @include transform(scale(2));
+    }
+
+}
+
+@include keyframes(fadeIn1) {
+    0%{
+        opacity: 0.5;
+    }
+
+    50%{
+        opacity: 0.8;
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}
+
+
+
+@include keyframes(fadeIn2) {
+    0%{
+        opacity: 0.6;
+        @include size(0px  195px/2.3);
+    }
+
+    50%{
+        opacity: 0.8;
+        @include size(1250px/2.3 195px/2.3);
+    }
+
+    100%{
+        opacity: 1;
+        @include size(1250px/2.3 195px/2.3);
+    }
+
+}
+
+
+
