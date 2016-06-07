@@ -109,7 +109,6 @@ function processFrame(){
 		draw.restore();
 		var _x = Math.abs(tile.originX - tile.currentX);
 		var _y = Math.abs(tile.originY - tile.currentY);
-		//var diffRot = (0-tile.rotation)*0.2;
 
         var distance = Math.sqrt(_x*_x + _y*_y) - 4;
         if (Math.abs(tile.originX - tile.currentX) < 4 && Math.abs(tile.originY - tile.currentY) < 4) {
@@ -121,11 +120,11 @@ function processFrame(){
         }
 
         tile.angle +=1;
+
         if(tile.angle>360) { 
-             tile.angle = 0;//getRandom(0, 359);
+             tile.angle = 0;
          }
 			
-		
 	}
     if (!overTriggered && over) {
        $('body').trigger('animate-over'); 
