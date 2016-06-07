@@ -52,7 +52,7 @@ function init(){
     if (intl) {
        window.clearInterval(intl);
     }
-	intl = setInterval("processFrame()", 33);
+	intl = setInterval("process()", 33);
     $('body').on('animate-over', function() {
         window.clearInterval(intl);
           $('.text').fadeIn(500);
@@ -87,7 +87,7 @@ function createTiles(){
 			tile.originY = offsetY+y;
 			tile.currentX = getRandom(PAINTRECT.width * r, PAINTRECT.width * r);
 			tile.currentY = getRandom(PAINTRECT.height * r, PAINTRECT.height * r);
-            tile.angle = getRandom(0, 360); //getRandom(0, 359);
+            tile.angle = getRandom(0, 360);
 			tiles.push(tile);
 			x+=TILE_WIDTH;
 		}
@@ -95,7 +95,7 @@ function createTiles(){
 	}
 }
 
-function processFrame(){
+function process(){
     over = true;
 	draw.clearRect(PAINTRECT.x, PAINTRECT.y,PAINTRECT.width,PAINTRECT.height);
 	for(var i=0; i<tiles.length; i++){
